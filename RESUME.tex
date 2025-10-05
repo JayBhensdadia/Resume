@@ -3,7 +3,6 @@
 % Author: Jay Bhensdadia
 %------------------------
 
-
 \documentclass[]{deedy-resume-reversed}
 \usepackage{fancyhdr}
 
@@ -47,25 +46,33 @@
 \location{Oct 2024 – Present | Bangalore, India}
 \vspace{\topsep}
 \begin{tightemize}
-\item Contributing to IBM Cloud Networking (IaaS) organization across teams including Private DNS, Load Balancer as a Service (LBaaS), and Developer Experience (UI, CLI, Terraform, SDK).
-\item Migrated Private DNS control path storage from ETCD to Redis by designing a polling-based mechanism to replace ETCD’s native watch events, enabling reliable state monitoring.
-\item Analyzed and implemented strategies for migrating appliance-based PDNS systems (provisioned on VSI) to Redis while ensuring minimal disruption to dependent components.
-\item Designed and developed \textbf{Phoenix}, a recovery microservice for LBaaS that enables immediate recovery of stuck load balancers, reducing reliance on manual recovery processes and periodic Jenkins jobs.
-\item Integrated admin APIs into the operations dashboard to simplify token management and API queries, reducing manual SRE efforts.
-\item Enhanced Developer Experience by maintaining client tools: \textbf{UI (React + Express)}, \textbf{CLI (Go)}, \textbf{Terraform provider (Go)}, and \textbf{SDKs} (Java, Python, Go, JavaScript) for networking services.
+% High-level, big impact bullets first
+\item Contributing to IBM Cloud Networking (IaaS), collaborating across Private DNS, LBaaS, and Developer Experience teams (UI, CLI, Terraform, SDK).
+\item Co-designed and implemented key components of \textbf{Phoenix}, a recovery microservice for LBaaS that enables immediate recovery of stuck load balancers, reducing reliance on manual processes and periodic Jenkins jobs.
+
+% Technical depth bullets next
+\item Worked on Private DNS control path migration from ETCD to Redis, implementing a polling-based mechanism to replace ETCD’s native watch events for reliable state monitoring.
+\item Developed LuaScripts to identify expired VSI leases, enabling reliable polling in place of ETCD watch events.
+\item Integrated admin APIs into the operations dashboard, simplifying token management and API queries, and significantly reducing manual SRE effort.
+\item Maintained and extended client tools (\textbf{UI: React + Express}, \textbf{CLI: Go}, \textbf{Terraform provider: Go}, \textbf{SDKs: Java, Python, Go, JavaScript}), supporting networking service feature releases across teams.
 \end{tightemize}
 \sectionsep
 
 \runsubsection{Silvertouch Technologies}
-\descript{| Software Development Engineer }
+\descript{| Software Development Engineer | (Intern + Full Time)}
 \location{Jan 2024 – Oct 2024 | Ahmedabad, India}
 \begin{tightemize}
-\item Completed 6-month internship training across multiple technologies including Spring Boot, React, Angular, iOS (Swift), and Flutter, building adaptability and rapid learning skills to quickly contribute to varied projects.
-\item Designed and implemented asynchronous and atomic integration between HRMS (Java) and Odoo Accounting module to ensure accurate event-based accounting entries (claims, loans, salaries) without duplicate processing.
+% Highlight high-impact bullets first
+\item Completed 6-month internship training across Spring Boot, React, Angular, iOS (Swift), and Flutter, developing adaptability and rapid learning skills to contribute quickly to projects.
+\item Single handedly designed and implemented asynchronous, atomic integration between HRMS (Java) and Odoo Accounting module, ensuring accurate event-based accounting entries (claims, loans, salaries) without duplicates.
+
+
+% Technical depth bullets
 \item Optimized HRMS admin dashboards by consolidating multiple queries into database views, reducing page load time from 10–15 seconds to under 1 second.
-\item Co-developed a production database sanitization script for a 1200+ table HRMS schema, leveraging ON-DELETE CASCADE to safely remove dummy users and associated data without affecting real users.
+\item Co-developed production database sanitization script for a 1200+ table HRMS schema, leveraging ON-DELETE CASCADE to safely remove dummy users and related data without affecting real users.
 \end{tightemize}
 \sectionsep
+
 
 
 
@@ -79,11 +86,12 @@
 \location{Spring Boot | Keycloak | Postgres | Docker | Next.js | Redis | Kubernetes}
 \begin{tightemize}
 \item Developed a full-stack expense tracker with CRUD, category management, and automated cloud bill fetching (AWS, Azure) via IAM role integration.
-\item Built a minimal dashboard (\textbf{Next.js}) with \textbf{Spring Boot} backend, \textbf{Postgres} DB, and \textbf{Redis}-based session storage for distributed pods.
-\item Integrated \textbf{Keycloak} for centralized authentication and containerized services with \textbf{Docker}, designed for scalable deployment on \textbf{Kubernetes}.
+\item Built a minimal \textbf{Next.js} dashboard with \textbf{Spring Boot} backend, \textbf{Postgres} DB, and \textbf{Redis}-based session storage for distributed pods.
+\item Integrated \textbf{Keycloak} for authentication and containerized services with \textbf{Docker} for scalable deployment on \textbf{Kubernetes}.
 \item \href{https://github.com/JayBhensdadia/munimjii}{Repository Link}
 \end{tightemize}
 \sectionsep
+
 
 
 
