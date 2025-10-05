@@ -36,6 +36,7 @@
 
 \begin{minipage}[t]{0.60\textwidth}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     EXPERIENCE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,77 +44,49 @@
 \section{Experience}
 \runsubsection{IBM}
 \descript{| Backend Developer }
-\location{Oct 2024 – Present | Banglore, India}
-\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\location{Oct 2024 – Present | Bangalore, India}
+\vspace{\topsep}
 \begin{tightemize}
-
-\item i'm part of networking org in ibm cloud which comes under IAAS
-\item so, worked across teams like Private DNS, LBaaS and DevX ( ui, cli, tf, sdk team)
-\item PDNS ETCD to REDIS
-\item i worked with Private DNS (PDNS) team.
-\item Private DNS Control path uses ETCD, then team decided to move to REDIS. ETCD has lot of native features like watch events, which is not there in REDIS so we decided to go with polling
-\item PDNS is also appliance based meaning it provisions VSI (VM on ibm cloud) to monitor VSI there is a concept of lease which is monitored by other components.as there are lot of moving piece depending on ETCD, so graceful migration to REDIS was not easy
-
-\item Phoenix
-\item i worked with Load Balancer As a Service (LBaaS).
-\item load balancer is installed as an application in VSI (VM on ibm cloud), so to provision and configure it there are lot of steps and activities. often LB is stuck in some state and we have to recover it.
-there is one manual way to recover, there is one jenkins job also which runs after every 30 mins and tries to recover all stuck LBs.
-\item but we developed one recovery microservice called phoenix which will perform immedeate recovery of the stuck LB. i was part of this new microservice from the POC and design discussion stage and worked on it
-
-% \item trusted profile integration
-\item OPS dashboard
-\item integrated admin apis of one service into the ops dashboard
-\item reducing the SRE efforts to query iam service to get access token and formulate the curl command with appropriate payload etc. now just simply use the ops dashboard
-\item UI CLI TF SDK
-\item UI -> React + Express, CLI -> GO, TF -> Go, SDK in all languages java,python,go, javascript
-\item worked on client side things like UI CLI TF SDK, any services in networking org releases the feature we update the UI CLI TF SDK of that particular service
-
-
+\item Contributing to IBM Cloud Networking (IaaS) organization across teams including Private DNS, Load Balancer as a Service (LBaaS), and Developer Experience (UI, CLI, Terraform, SDK).
+\item Migrated Private DNS control path storage from ETCD to Redis by designing a polling-based mechanism to replace ETCD’s native watch events, enabling reliable state monitoring.
+\item Analyzed and implemented strategies for migrating appliance-based PDNS systems (provisioned on VSI) to Redis while ensuring minimal disruption to dependent components.
+\item Designed and developed \textbf{Phoenix}, a recovery microservice for LBaaS that enables immediate recovery of stuck load balancers, reducing reliance on manual recovery processes and periodic Jenkins jobs.
+\item Integrated admin APIs into the operations dashboard to simplify token management and API queries, reducing manual SRE efforts.
+\item Enhanced Developer Experience by maintaining client tools: \textbf{UI (React + Express)}, \textbf{CLI (Go)}, \textbf{Terraform provider (Go)}, and \textbf{SDKs} (Java, Python, Go, JavaScript) for networking services.
 \end{tightemize}
 \sectionsep
 
 \runsubsection{Silvertouch Technologies}
-\descript{| SDE }
-\location{Jun 2024 – Oct 2024 | Ahmedabad, India}
+\descript{| Software Development Engineer }
+\location{Jan 2024 – Oct 2024 | Ahmedabad, India}
 \begin{tightemize}
-\item Accounting Module
-\item i was working on HRMS project which had some events for which accounting entry needs to be made in ODOO's accounting module ( a different team ) i.e claim, loan, salary etc.
-\item so i alone was given responsibility to develop integration between our HRMS(java team) and Odoo (odoo team)
-\item i developed an asynchronous and atomic system to propogate accounting info to odoo api's so we do not process the same transcation multiple times and dont block the main thread
-\item Dashboard optimization
-\item admin dashboards comprises of lot of info that is coming from many different database tables and shown on a single page, so initially page was taking around 10-15 seconds to load because multiple database calls were happening to gather all the data that is required, i created database views by joining the required tables and updated the api to get all the data in one DB call reducing the dashboard loading time to less then 1 second
-\item Production database sanitization
-\item before our staging infra was setup team used to test on prod env because of which there was a lot of dummy data in prod database.
-\item so me and one other collgue was given task to clean the prod database safely. there were around 1200 database tables, as this was an HRMS application users table was the main table which was referenced in almost all of the other tables, so we wrote a script that will add ON-DELETE CASCADE to all the forieng key contraint ( to user talbe) of all tables then we will delete all the users that are not present in actual users list (this was given to us by client), this will delete all the dummy user and all corresponding dummy data from all the tables, and then script would remove ON DELETE CASCADE from the tables
-
-
+\item Completed 6-month internship training across multiple technologies including Spring Boot, React, Angular, iOS (Swift), and Flutter, building adaptability and rapid learning skills to quickly contribute to varied projects.
+\item Designed and implemented asynchronous and atomic integration between HRMS (Java) and Odoo Accounting module to ensure accurate event-based accounting entries (claims, loans, salaries) without duplicate processing.
+\item Optimized HRMS admin dashboards by consolidating multiple queries into database views, reducing page load time from 10–15 seconds to under 1 second.
+\item Co-developed a production database sanitization script for a 1200+ table HRMS schema, leveraging ON-DELETE CASCADE to safely remove dummy users and associated data without affecting real users.
 \end{tightemize}
 \sectionsep
 
-\runsubsection{Silvertouch Technologies}
-\descript{| Intern }
-\location{Jan 2024 – Jun 2024 | Ahmedabad, India}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Projects}
+\runsubsection{Munimji}
+\descript{| Expense Tracker for Developers}
+\location{Spring Boot | Keycloak | Postgres | Docker | Next.js | Redis | Kubernetes}
 \begin{tightemize}
-% \item Studied Spring Boot and Java, focusing on microservices, RESTful APIs, and enterprise-level design.
-% \item Gained experience in iOS development, learning Swift and using Xcode.
-% \item Learned the MERN stack, covering full-stack development.
-\item During 6 months of my internship we were trained on various different technologies. every month we would be trained in new technology. so, i worked with Spring Boot, React, Angular, iOS, Flutter etc. the main thing i learnt there was not any framework or language but a skill that is how to learn and adapt quickly. so, because of that i am really good at picking up something new and quickly start working on it
+\item Developed a full-stack expense tracker with CRUD, category management, and automated cloud bill fetching (AWS, Azure) via IAM role integration.
+\item Built a minimal dashboard (\textbf{Next.js}) with \textbf{Spring Boot} backend, \textbf{Postgres} DB, and \textbf{Redis}-based session storage for distributed pods.
+\item Integrated \textbf{Keycloak} for centralized authentication and containerized services with \textbf{Docker}, designed for scalable deployment on \textbf{Kubernetes}.
+\item \href{https://github.com/JayBhensdadia/munimjii}{Repository Link}
 \end{tightemize}
 \sectionsep
 
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% %     PROJECTS
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \section{Projects}
-% \runsubsection{Space Robotics Team}
-% \descript{| Path-Planning Lead}
-% \location{Jan 2018 – Present | Somewhere, XX}
-% \begin{tightemize}
-% \item Spearhead the development effort for the path-planning functionality of a team of three robots.
-% \item ROS provides movement servers and the planning is being implemented in Python to allow for fully-autonomous operation.
-% \end{tightemize}
-% \sectionsep
+
 
 % \runsubsection{Chit Chat}
 % \descript{| Class Project for Distributed Client-Server Programming}
@@ -252,31 +225,19 @@ Cloud Native \textbullet{} MERN \\
 
 \section{Extracurricular}
 \subsection{Open Source Contribution}
-Latest Contribution
-% \begin{}
-% \item refine.dev
-% \end{}
+Contributed to \textbf{Refine.dev}, a React-based open-source framework. \\
+\href{https://github.com/refinedev/refine/pull/6021}{Pull Request Link}
 \sectionsep
 
 \subsection{Bootcamp}
-IBM SkillsBuild Data Analytics Innovation Camp 2022 \\
-% {\footnotesize \textit{\textbf{(Teaching Assistant) }}} \\
-% AI Robotics \\
-% Operating Systems I \\
-% Calculus I-IV \\
-% Data Analysis I \\
-% Introduction to Probability \\
+Completed \textbf{IBM SkillsBuild Data Analytics Innovation Camp 2022}, focused on data analysis, visualization, and cloud-based problem solving.
 \sectionsep
 
 \subsection{Online Internship}
-Tatvasoft Summer Internship \\
-% {\footnotesize \textit{\textbf{(Teaching Assistant) }}} \\
-% AI Robotics \\
-% Operating Systems I \\
-% Calculus I-IV \\
-% Data Analysis I \\
-% Introduction to Probability \\
+Tatvasoft Summer Internship — Developed a full-stack \textbf{bookstore platform} enabling buyers and sellers to transact books. \\
+\href{https://github.com/JayBhensdadia/Tatvasoft}{Project Repository}
 \sectionsep
+
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % %     Societies
